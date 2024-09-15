@@ -7,7 +7,7 @@ let game, renderer;
 
 function setUpGame(){
   const hardnessValue = parseFloat(hardness.value);
-  const grid = hardnessValue < 0.5 ? 10 : 15;
+  const grid = hardnessValue < 0.5 ? 10 : hardnessValue > 0.8 ? 20 : 15;
   game = new MazeGame(grid, grid, hardnessValue);
   renderer = new MazeRenderer(game, 'gameCanvas');
   game.initializeGame();
