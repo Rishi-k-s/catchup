@@ -3,23 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maze Trapper Game</title>
-    <style>
-        body {
-            font-family: sans-serif;
-        }
-        canvas {
-            border: 1px solid black;
-        }
+    <title>CatchUp</title>
+    <link rel="stylesheet" href="index.css">
 
-        .main-container {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            flex-wrap: wrap;
-            align-content: center;
-        }
-    </style>
     <script src="enemy.js" defer></script>
     <script src="maze.js" defer></script>
     <script src="logic.js" defer></script>
@@ -27,21 +13,33 @@
     <script src="index.js" defer></script>
 </head>
 <body>
-<h1 style="text-align: center;font-size: xxx-large;">CatchUp</h1>
-<div class="main-container">
-    <canvas id="gameCanvas" width="500" height="500"></canvas>
-    <div>
-        <label for="hardness">Hardness</label>
-        <input type="range" min="0.1" max="1" value="0.5" step="0.1" id="hardness">
-        <p style="max-width: 40vw">
-            You are the blue player. You objective is to trap the red player in the maze.
-            If you manage to get to a state where the red player has nowhere to go, you win.
-            Use the arrow keys to move the blue player. Use space bar to switch between the blue players.
-        </p>
-        <p style="font-size: large">Current Moves:&nbsp;<b id="moves"></b></p>
-        <p style="font-size: large">Moves Left:&nbsp;<b id="movesLeft"></b></p>
-        <p style="font-size: large">Game State:&nbsp;<b id="state"></b></p>
-    </div>
+<div class="container">
+    <header>
+        <h1>CatchUp</h1>
+    </header>
+    <main class="game-container">
+        <section class="game-board">
+            <canvas id="gameCanvas" width="500" height="500"></canvas>
+        </section>
+        <section class="game-info">
+            <div class="difficulty-control">
+                <label for="hardness">Difficulty:</label>
+                <input type="range" min="0.1" max="1" value="0.5" step="0.1" id="hardness">
+            </div>
+            <div class="game-stats">
+                <p>Current Moves: <span id="moves">0</span></p>
+                <p>Moves Left: <span id="movesLeft">0</span></p>
+                <p>Game State: <span id="state">Playing</span></p>
+            </div>
+
+            <div class="instructions">
+                <h2>How to Play</h2>
+                <p>You are the blue player. Your objective is to trap the red player in the maze.</p>
+                <p>Use the arrow keys to move the blue player. Use the space bar to switch between the blue players.</p>
+                <p>You move continuously in any direction until there is a wall or you hit another player. The red player can move any number of steps in any direction</p>
+            </div>
+        </section>
+    </main>
 </div>
 </body>
 </html>
