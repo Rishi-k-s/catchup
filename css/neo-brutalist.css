@@ -1,0 +1,308 @@
+/* Neo-brutalist UI styles */
+:root {
+    --primary-black: #000000;
+    --primary-white: #ffffff;
+    --accent-yellow: #FFE600;
+    --accent-red: #FF2D2D;
+    --accent-blue: #0066FF;
+    --box-shadow: 4px 4px 0 var(--primary-black);
+  }
+  
+  /* Container styles */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: var(--primary-white);
+    border: 3px solid var(--primary-black);
+  }
+  
+  /* Header styles */
+  header {
+    background-color: var(--accent-yellow);
+    border: 3px solid var(--primary-black);
+    padding: 10px;
+    margin-bottom: 15px;
+    box-shadow: var(--box-shadow);
+  }
+  
+  h1 {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 2.5rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+  }
+  
+  /* Game container */
+  .game-container {
+    display: grid;
+    grid-template-columns: 3fr 2fr; /* Adjusted ratio */
+    gap: 10px; /* Reduced gap */
+  }
+  
+  /* Game board section */
+  .game-board {
+    border: 3px solid var(--primary-black);
+    padding: 10px;
+    background-color: var(--primary-white);
+    box-shadow: var(--box-shadow);
+  }
+  
+  #gameCanvas {
+    border: 3px solid var(--primary-black);
+    background-color: #f0f0f0;
+    display: block; /* Prevents unwanted margins */
+  }
+  
+  /* Game info section */
+  .game-info {
+    border: 3px solid var(--primary-black);
+    padding: 10px;
+    background-color: var(--primary-white);
+    box-shadow: var(--box-shadow);
+  }
+  
+  /* Difficulty control */
+  .difficulty-control {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 3px solid var(--primary-black);
+    background-color: var(--accent-yellow);
+  }
+  
+  .difficulty-control label {
+    font-family: 'Arial Black', sans-serif;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+  }
+  
+  input[type="range"] {
+    width: 100%;
+    height: 20px;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--primary-white);
+    border: 2px solid var(--primary-black);
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    background: var(--primary-black);
+    cursor: pointer;
+    border: 2px solid var(--primary-white);
+  }
+  
+  /* Game stats */
+  .game-stats {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 3px solid var(--primary-black);
+    background-color: var(--accent-blue);
+    color: var(--primary-white);
+  }
+  
+  .game-stats p {
+    margin: 5px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  /* Instructions */
+  .instructions {
+    padding: 10px;
+    border: 3px solid var(--primary-black);
+    background-color: var(--primary-white);
+    min-height: 180px; /* Ensure space for d-pad */
+  }
+  
+  .instructions h2 {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  
+  .instructions p {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  
+  /* Start button */
+  .start-button {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    background-color: var(--accent-red);
+    color: var(--primary-white);
+    border: 3px solid var(--primary-black);
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.1s, box-shadow 0.1s;
+  }
+  
+  .start-button:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--primary-black);
+  }
+  
+  .start-button:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+  }
+  
+  /* D-pad styles */
+  .d-pad {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    margin: 10px auto;
+  }
+  
+  .d-pad-btn {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: var(--primary-white);
+    border: 3px solid var(--primary-black);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.1s, box-shadow 0.1s;
+  }
+  
+  .d-pad-btn:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--primary-black);
+  }
+  
+  .d-pad-btn.active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+    background-color: var(--accent-yellow);
+  }
+  
+  .d-pad-btn.up { 
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .d-pad-btn.right {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+  
+  .d-pad-btn.down {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .d-pad-btn.left {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  
+  .d-pad-btn.center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--accent-blue);
+    color: var(--primary-white);
+  }
+  
+/* Previous styles remain the same until the media query... */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+      padding: 5px;
+    }
+  
+    .game-container {
+      grid-template-columns: 1fr;
+      gap: 5px;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    .game-board {
+      position: relative;
+      padding-bottom: 180px; /* Make space for the D-pad */
+    }
+  
+    /* D-pad mobile positioning */
+    .instructions .d-pad {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 180px;
+      height: 180px;
+      margin: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 10px;
+      border: 3px solid var(--primary-black);
+      border-radius: 10px;
+      box-shadow: var(--box-shadow);
+    }
+  
+    .d-pad-btn {
+      width: 45px;
+      height: 45px;
+      font-size: 20px;
+    }
+  
+    /* Hide instructions when game starts on mobile */
+    .instructions {
+      min-height: auto;
+    }
+    
+    .instructions h2,
+    .instructions p {
+      display: none;
+    }
+  
+    .instructions .start-button {
+      margin: 10px auto;
+      max-width: 200px;
+    }
+  }
+  
+  /* Add styles for landscape orientation */
+  @media (max-width: 768px) and (orientation: landscape) {
+    .instructions .d-pad {
+      right: 20px;
+      left: auto;
+      transform: none;
+      bottom: 20px;
+      width: 150px;
+      height: 150px;
+    }
+  
+    .d-pad-btn {
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+    }
+  }
